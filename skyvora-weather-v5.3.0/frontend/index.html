@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-theme="dark" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#071a3d" />
+    <meta name="application-version" content="5.3.0" />
+    <meta
+      name="description"
+      content="Skyvora Weather — intelligent forecasts, beautiful weather insights, air quality and a premium weather experience."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      property="og:title"
+      content="Skyvora Weather — See the sky differently"
+    />
+    <meta
+      property="og:description"
+      content="Real-time weather, forecast intelligence and a beautifully crafted weather experience."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="/assets/icons/skyvora-favicon.png"
+      type="image/png"
+      sizes="64x64"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/icons/skyvora-favicon.png"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/icons/skyvora-apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Skyvora Weather 5.3.0 — Fully Responsive Weather Experience</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#viewRoot" tabindex="0">Skip to main content</a>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <a
+          class="brand"
+          href="#dashboard"
+          data-view="dashboard"
+          aria-label="SkyvoraWeather home"
+        >
+          <span class="brand-mark"
+            ><img
+              src="/assets/icons/skyvora-weather-logo.png"
+              alt="Skyvora Weather logo"
+              width="112"
+              height="112"
+          /></span>
+          <span class="brand-name">SkyvoraWeather</span>
+        </a>
+
+        <div class="sidebar-current" id="sidebarLocation">
+          <span class="eyebrow">YOUR LOCATION</span>
+          <div class="sidebar-place">
+            <span class="live-dot"></span
+            ><span id="sidebarCity">Islamabad</span>
+          </div>
+          <span class="sidebar-date" id="sidebarDate">Loading local time…</span>
+        </div>
+
+        <nav class="nav-groups" aria-label="Skyvora navigation">
+          <div class="nav-group">
+            <span class="nav-label">MENU</span>
+            <button class="nav-link active" data-view="dashboard">
+              <span class="nav-icon" data-icon="home"></span><span>Home</span>
+            </button>
+            <button class="nav-link" data-action="focus-search">
+              <span class="nav-icon" data-icon="search"></span
+              ><span>Search</span>
+            </button>
+            <button class="nav-link" data-view="maps">
+              <span class="nav-icon" data-icon="map-pin"></span
+              ><span>Locations</span>
+            </button>
+            <button class="nav-link" data-view="favorites">
+              <span class="nav-icon" data-icon="star"></span
+              ><span>Favorites</span>
+            </button>
+            <button class="nav-link" data-view="settings">
+              <span class="nav-icon" data-icon="settings"></span
+              ><span>Settings</span>
+            </button>
+            <button class="nav-link" data-action="cycle-theme">
+              <span class="nav-icon" data-icon="palette"></span
+              ><span>Theme</span>
+            </button>
+          </div>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="upgrade-card">
+            <div class="upgrade-glow"></div>
+            <span class="upgrade-icon" data-icon="sparkles"></span>
+            <strong>Skyvora Intelligence</strong>
+            <p>Understand the sky with clear, useful weather insights.</p>
+            <button class="text-button" data-view="intelligence">
+              Explore insights <span data-icon="arrow-up-right"></span>
+            </button>
+          </div>
+          <div class="sidebar-copyright">
+            © 2026 Skyvora Weather<br /><span>All rights reserved.</span
+            ><span id="serviceStatus" class="sr-only" aria-live="polite"
+              >Checking</span
+            >
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-column">
+        <div class="scene-backdrop" aria-hidden="true">
+          <span class="weather-motion weather-motion-clouds"></span>
+          <span class="weather-motion weather-motion-snow"></span>
+          <span class="weather-motion weather-motion-fog"></span>
+          <span class="weather-motion weather-motion-lightning"></span>
+        </div>
+        <header class="topbar">
+          <button
+            class="icon-button mobile-menu"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+          >
+            <span data-icon="menu"></span>
+          </button>
+          <div class="breadcrumb">
+            <span>SKYVORA</span><span class="breadcrumb-slash">/</span
+            ><strong id="pageTitle">Dashboard</strong>
+          </div>
+          <form
+            class="search-wrap"
+            id="searchForm"
+            role="search"
+            autocomplete="off"
+            aria-label="Worldwide location search"
+          >
+            <span class="search-icon" data-icon="search"></span>
+            <input
+              id="citySearch"
+              type="search"
+              minlength="2"
+              placeholder="Search any city, country or postcode…"
+              aria-label="Search worldwide by city, region, country, postcode or coordinates"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="searchResults"
+              enterkeyhint="search"
+              spellcheck="false"
+            />
+            <kbd>⌘ K</kbd>
+            <button
+              class="search-clear"
+              type="button"
+              id="searchClear"
+              aria-label="Clear search"
+              hidden
+            >
+              <span data-icon="x"></span>
+            </button>
+            <div
+              class="search-results"
+              id="searchResults"
+              role="listbox"
+              hidden
+            ></div>
+          </form>
+          <div class="topbar-actions">
+            <button
+              class="top-location"
+              id="topLocationButton"
+              type="button"
+              data-action="locate"
+              aria-label="Use current location"
+              title="Use current location"
+            >
+              <span class="top-location-pin" data-icon="crosshair"></span>
+              <span id="topLocationName">Islamabad, Pakistan</span>
+              <span
+                class="top-location-chevron"
+                data-icon="chevron-down"
+              ></span>
+            </button>
+            <button
+              class="icon-button location-button"
+              id="locateButton"
+              aria-label="Use my location"
+              title="Use my location"
+            >
+              <span data-icon="crosshair"></span>
+            </button>
+            <button
+              class="icon-button theme-toggle"
+              id="themeToggle"
+              aria-label="Switch to light theme"
+              title="Switch theme"
+            >
+              <span data-icon="moon"></span>
+            </button>
+            <button
+              class="icon-button top-notification"
+              id="alertsButton"
+              aria-label="Weather alerts"
+              title="Weather alerts"
+            >
+              <span data-icon="bell"></span><i></i>
+            </button>
+            <div class="top-avatar" role="img" aria-label="Guest profile">
+              S
+            </div>
+            <button
+              class="btn btn-small install-button"
+              id="installButton"
+              data-action="install-pwa"
+              hidden
+            >
+              Install app
+            </button>
+          </div>
+        </header>
+
+        <main class="page-content" id="viewRoot" tabindex="-1">
+          <div class="initial-loading">
+            <span class="loader-ring"></span>
+            <p>Reading the sky over your location…</p>
+          </div>
+        </main>
+
+        <footer class="app-footer">
+          <div>
+            <span class="footer-brand">skyvora<span>.</span></span
+            ><span>Know Today. Plan Tomorrow.</span>
+          </div>
+          <div class="footer-meta">
+            <span id="footerUpdated">Waiting for weather data</span
+            ><span class="footer-separator">•</span
+            ><a
+              href="https://open-meteo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Weather data by Open-Meteo</a
+            ><span class="footer-separator">•</span
+            ><a
+              href="https://unsplash.com/license"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Photography license</a
+            >
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="mobile-nav-item active" data-view="dashboard">
+        <span data-icon="grid"></span><small>Home</small>
+      </button>
+      <button class="mobile-nav-item" data-view="forecast">
+        <span data-icon="calendar-days"></span><small>Forecast</small>
+      </button>
+      <button class="mobile-nav-item" data-view="maps">
+        <span data-icon="map"></span><small>Maps</small>
+      </button>
+      <button class="mobile-nav-item" data-view="favorites">
+        <span data-icon="heart"></span><small>Saved</small>
+      </button>
+      <button class="mobile-nav-item" data-view="settings">
+        <span data-icon="settings"></span><small>Settings</small>
+      </button>
+    </nav>
+
+    <div
+      class="toast-region"
+      id="toastRegion"
+      aria-live="polite"
+      aria-atomic="false"
+    ></div>
+    <div class="modal-root" id="modalRoot"></div>
+    <div
+      class="sr-only"
+      id="liveRegion"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,280 @@
+/*
+ * V5.0.0 — Clear, comfortable reading scale
+ * Gives descriptions and supporting copy more room and a lighter weight,
+ * while preserving the established Skyvora display typography and hierarchy.
+ */
+:root {
+  --reading-body: 15px;
+  --reading-copy: 13px;
+  --reading-support: 12px;
+  --reading-meta: 11px;
+  --reading-leading: 1.68;
+}
+
+:root[data-theme="dark"] {
+  --reading-copy-color: #c4d3e8;
+  --reading-support-color: #afc2dc;
+  --reading-meta-color: #9bb0cc;
+}
+
+:root[data-theme="light"] {
+  --reading-copy-color: #405570;
+  --reading-support-color: #526985;
+  --reading-meta-color: #657c97;
+}
+
+body {
+  font-size: var(--reading-body);
+  line-height: 1.62;
+}
+
+.page-content,
+#viewRoot {
+  font-size: var(--reading-body);
+  line-height: 1.62;
+}
+
+/* Ordinary explanatory copy: larger, regular-weight and easier to scan. */
+#viewRoot p:not(.page-kicker):not(.smart-outlook-kicker),
+#viewRoot .map-note,
+#viewRoot .source-line,
+#viewRoot .aqi-source-note,
+#viewRoot .trend-footer,
+#viewRoot .smart-outlook-footnote,
+#viewRoot .smart-outlook-copy p,
+#viewRoot .aqi-overview-copy p,
+#viewRoot .search-discovery p,
+#viewRoot .search-empty-state p,
+#viewRoot .feature-card p,
+#viewRoot .education-card p,
+#viewRoot .saved-city p,
+#viewRoot .hero-summary,
+#viewRoot .reference-summary,
+#viewRoot .reference-unavailable,
+#viewRoot .inline-notice,
+#viewRoot .weather-answer,
+#viewRoot .hourly-heading-copy p {
+  font-size: var(--reading-copy) !important;
+  font-weight: 400 !important;
+  line-height: var(--reading-leading) !important;
+  color: var(--reading-copy-color) !important;
+}
+
+/* Small explanatory labels no longer fall to 6–10px microtype. */
+#viewRoot
+  small:not(.aqi-gauge-core small):not(.premium-pollutant > strong small),
+#viewRoot .small,
+#viewRoot .tiny,
+#viewRoot label,
+#viewRoot .reference-updated,
+#viewRoot .reference-highlight-label,
+#viewRoot .reference-day-date,
+#viewRoot .reference-day-condition,
+#viewRoot .reference-day-rain,
+#viewRoot .reference-details-subtitle,
+#viewRoot .reference-stat-copy small,
+#viewRoot .reference-detail-copy small,
+#viewRoot .reference-location-line small,
+#viewRoot .hourly-summary-chip small,
+#viewRoot .hourly-scroll-caption,
+#viewRoot .hourly-rain-readout small,
+#viewRoot .trend-summary-item small,
+#viewRoot .aqi-pollutant-heading small,
+#viewRoot .pollutant-topline small,
+#viewRoot .pollutant-no-trend,
+#viewRoot .aqi-trend-summary small,
+#viewRoot .aqi-trend-summary em,
+#viewRoot .aqi-driver > span,
+#viewRoot .aqi-select-wrap,
+#viewRoot .smart-outlook-copy small,
+#viewRoot .search-result-copy small,
+#viewRoot .search-result-copy .search-result-detail,
+#viewRoot .search-loading-premium small,
+#viewRoot .search-use-location small,
+#viewRoot .trend-control-label {
+  font-size: var(--reading-support) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  color: var(--reading-support-color) !important;
+}
+
+/* Keep compact instrument labels compact, but still legible. */
+#viewRoot .aqi-gauge-core small,
+#viewRoot .aqi-data-tag,
+#viewRoot .aqi-scale-labels,
+#viewRoot .wind-compass-caption,
+#viewRoot .wind-cardinal,
+#viewRoot .wind-intercardinal,
+#viewRoot .smart-outlook-kicker,
+#viewRoot .reference-live-badge,
+#viewRoot .trend-range-caption {
+  font-size: 10.5px !important;
+  line-height: 1.4 !important;
+}
+
+/* Controls and chart selectors need readable labels and comfortable targets. */
+#viewRoot .chart-tab,
+#viewRoot .trend-metric-tabs .chart-tab,
+#viewRoot .trend-range-tabs .chart-tab,
+#viewRoot .aqi-range-tabs .chart-tab,
+#viewRoot .btn,
+#viewRoot .search-retry-button,
+#viewRoot .field input,
+#viewRoot .field select,
+#viewRoot .field textarea {
+  font-size: 12px !important;
+  font-weight: 500;
+}
+
+#viewRoot .trend-metric-tabs .chart-tab,
+#viewRoot .trend-range-tabs .chart-tab,
+#viewRoot .aqi-range-tabs .chart-tab {
+  min-height: 36px;
+  padding-inline: 11px;
+}
+
+/* Forecast and data labels retain their numeric hierarchy. */
+#viewRoot .hourly-item .hour,
+#viewRoot .daily-day strong,
+#viewRoot .temp-range strong,
+#viewRoot .reference-day-name,
+#viewRoot .reference-day-temps,
+#viewRoot .reference-highlight-value,
+#viewRoot .reference-city-copy small,
+#viewRoot .wind-reading-label,
+#viewRoot .wind-reading-tile small,
+#viewRoot .daylight-status-copy small,
+#viewRoot .daylight-time small,
+#viewRoot .daylight-remaining small,
+#viewRoot .aqi-meta-line,
+#viewRoot .aqi-scale-labels,
+#viewRoot .aqi-unavailable p,
+#viewRoot .aqi-trend-empty,
+#viewRoot .trend-summary-empty {
+  font-size: var(--reading-support) !important;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--reading-support-color);
+}
+
+/* Longer source and forecast disclaimers get extra breathing room. */
+#viewRoot .smart-outlook-footnote,
+#viewRoot .trend-footer,
+#viewRoot .source-line,
+#viewRoot .aqi-source-note,
+#viewRoot .wind-direction-note,
+#viewRoot .reference-error-banner small {
+  font-size: 12px !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  color: var(--reading-support-color) !important;
+}
+
+/* Search results remain compact, but result details are not tiny. */
+.search-results-kicker,
+.search-group-label,
+.search-global-badge {
+  font-size: 10.5px !important;
+  line-height: 1.45;
+}
+.search-result-copy strong,
+.search-results-head strong {
+  font-size: 14px;
+}
+.search-result-copy small {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+.search-result-copy .search-result-detail {
+  font-size: 11px !important;
+}
+.search-results-foot,
+.search-discovery p,
+.search-empty-state p {
+  font-size: 12px !important;
+  line-height: 1.65 !important;
+}
+
+/* Shared shell copy and navigation captions. */
+.brand-copy small,
+.sidebar-current .sidebar-date,
+.upgrade-card p,
+.sidebar-copyright,
+.footer-meta,
+.breadcrumb {
+  font-size: 11.5px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.nav-label,
+.dashboard-view .nav-label {
+  font-size: 11px;
+  letter-spacing: 1.25px;
+}
+
+/* Mobile text keeps the same readable minimum instead of shrinking again. */
+@media (max-width: 600px) {
+  body,
+  .page-content,
+  #viewRoot {
+    font-size: 15px;
+  }
+
+  #viewRoot p:not(.page-kicker):not(.smart-outlook-kicker),
+  #viewRoot .map-note,
+  #viewRoot .source-line,
+  #viewRoot .aqi-source-note,
+  #viewRoot .trend-footer,
+  #viewRoot .smart-outlook-footnote,
+  #viewRoot .smart-outlook-copy p,
+  #viewRoot .aqi-overview-copy p,
+  #viewRoot .feature-card p,
+  #viewRoot .education-card p,
+  #viewRoot .search-discovery p,
+  #viewRoot .search-empty-state p {
+    font-size: 12.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  #viewRoot
+    small:not(.aqi-gauge-core small):not(.premium-pollutant > strong small),
+  #viewRoot .small,
+  #viewRoot .tiny,
+  #viewRoot label,
+  #viewRoot .reference-day-date,
+  #viewRoot .reference-day-condition,
+  #viewRoot .reference-day-rain,
+  #viewRoot .reference-stat-copy small,
+  #viewRoot .reference-detail-copy small,
+  #viewRoot .trend-summary-item small,
+  #viewRoot .aqi-meta-line,
+  #viewRoot .aqi-pollutant-heading small,
+  #viewRoot .pollutant-topline small,
+  #viewRoot .aqi-trend-summary small,
+  #viewRoot .aqi-trend-summary em,
+  #viewRoot .search-result-copy small,
+  #viewRoot .search-result-copy .search-result-detail {
+    font-size: 11.5px !important;
+  }
+
+  .mobile-nav-item small {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #viewRoot .chart-tab,
+  #viewRoot .trend-metric-tabs .chart-tab,
+  #viewRoot .trend-range-tabs .chart-tab,
+  #viewRoot .aqi-range-tabs .chart-tab {
+    font-size: 11px !important;
+    padding-inline: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #viewRoot * {
+    scroll-behavior: auto;
+  }
+}

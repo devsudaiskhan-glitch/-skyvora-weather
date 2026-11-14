@@ -1,0 +1,110 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --bg-elevated: #101a2b;
+  --surface: #121e31;
+  --surface-2: #17253a;
+  --surface-3: #1d2e46;
+  --surface-glass: rgba(17, 30, 49, 0.72);
+  --text: #f1f6fd;
+  --text-soft: #b3c1d4;
+  --muted: #8191a8;
+  --muted-2: #64758f;
+  --line: rgba(169, 194, 224, 0.11);
+  --line-strong: rgba(169, 194, 224, 0.2);
+  --accent: #85d7f5;
+  --accent-strong: #4cb6e9;
+  --accent-soft: rgba(89, 192, 234, 0.13);
+  --violet: #9c9bff;
+  --green: #79d8b2;
+  --yellow: #f5c877;
+  --orange: #f4a16b;
+  --red: #f17d86;
+  --blue: #78aaf5;
+  --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 18px 45px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.3);
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --sidebar-width: 252px;
+  --topbar-height: 76px;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --urdu: system-ui, sans-serif;
+  --ease: cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f2f6fb;
+  --bg-elevated: #f8fbff;
+  --surface: #ffffff;
+  --surface-2: #f5f8fc;
+  --surface-3: #eaf1f8;
+  --surface-glass: rgba(255, 255, 255, 0.78);
+  --text: #17263b;
+  --text-soft: #4e6078;
+  --muted: #72839a;
+  --muted-2: #8b9bb0;
+  --line: rgba(37, 63, 95, 0.1);
+  --line-strong: rgba(37, 63, 95, 0.18);
+  --accent: #208ab8;
+  --accent-strong: #147cab;
+  --accent-soft: rgba(32, 138, 184, 0.1);
+  --violet: #6f70d8;
+  --green: #198b68;
+  --yellow: #bd8427;
+  --orange: #c9753c;
+  --red: #cc5967;
+  --blue: #3e78cb;
+  --shadow-sm: 0 8px 22px rgba(35, 68, 106, 0.06);
+  --shadow-md: 0 18px 45px rgba(35, 68, 106, 0.09);
+  --shadow-lg: 0 28px 80px rgba(35, 68, 106, 0.12);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  color: inherit;
+}
+a {
+  color: inherit;
+}
+::selection {
+  background: rgba(94, 193, 235, 0.28);
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+[hidden] {
+  display: none !important;
+}

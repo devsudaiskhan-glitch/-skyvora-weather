@@ -1,0 +1,5 @@
+SKYVORA WEATHER 5.2.2
+Performance-focused source release
+
+Run npm install, npm test, npm run check, and npm run audit:production before deployment.
+A real Lighthouse run is still required for performance score verification.

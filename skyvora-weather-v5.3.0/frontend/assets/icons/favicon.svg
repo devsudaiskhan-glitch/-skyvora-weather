@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Skyvora</title>
+  <desc id="desc">A simple sun rising over a cloud.</desc>
+  <path d="M43.8 39.2a13.8 13.8 0 0 0-26.6-4.8A10.1 10.1 0 0 0 18.4 54h25.1a8.1 8.1 0 0 0 .3-16.2Z" fill="#EAF6FF"/>
+  <path d="M32 7v5.2M14.3 14.3l3.7 3.7M49.7 14.3 46 18M7 31h5.2M51.8 31H57" stroke="#57B9F2" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M22.8 31.4a10.3 10.3 0 0 1 18.6 3.1" stroke="#57B9F2" stroke-width="3.8" stroke-linecap="round"/>
+</svg>

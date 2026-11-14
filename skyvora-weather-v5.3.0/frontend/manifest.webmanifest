@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "Skyvora Weather 5.3.0",
+  "short_name": "Skyvora",
+  "description": "A responsive premium weather experience with worldwide city search, intelligent forecasts, weather trends, air quality and adaptive day/night scenes.",
+  "start_url": "/#dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071a3d",
+  "theme_color": "#071a3d",
+  "icons": [
+    {
+      "src": "/assets/icons/skyvora-app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/skyvora-app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
